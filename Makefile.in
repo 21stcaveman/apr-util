@@ -74,7 +74,7 @@ top_blddir=@abs_builddir@
 
 # Create apu-config script suitable for the install tree
 apu-config.out: $(APU_CONFIG)
-	sed 's,^\(location=\).*$$,\1installed,' < $(APU_CONFIG) > $@
+	sed 's,^\(location=\).*$$,\1installed,;s,^\(APR_.*_DIR\)=.*,\1="$${libdir}/build",' < $(APU_CONFIG) > $@
 
 install: $(TARGETS) install-modules
 	$(APR_MKDIR) $(DESTDIR)$(includedir) $(DESTDIR)$(libdir)/pkgconfig \

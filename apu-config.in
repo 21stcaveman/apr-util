@@ -24,8 +24,9 @@ APRUTIL_DOTTED_VERSION="@APRUTIL_DOTTED_VERSION@"
 prefix="@prefix@"
 exec_prefix="@exec_prefix@"
 bindir="@bindir@"
-libdir="@libdir@"
 includedir="@includedir@"
+
+libdir=`pkg-config --variable=libdir apr-util-@APRUTIL_MAJOR_VERSION@`
 
 LIBS="@APRUTIL_EXPORT_LIBS@"
 INCLUDES="@APRUTIL_INCLUDES@"
